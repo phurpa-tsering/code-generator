@@ -1,0 +1,32 @@
+{
+  "name": "@voiden/plugin-code-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Generate request code in JavaScript, Python, Go, Java, PHP, Ruby, C#, Swift and more from any REST request in a .void file",
+  "main": "./src/plugin.ts",
+  "scripts": {
+    "build": "node build.mjs && node build-main.mjs",
+    "zip": "node zip.mjs",
+    "test": "vitest run",
+    "release": "node build.mjs && node build-main.mjs && node generate-manifest.mjs"
+  },
+  "dependencies": {
+    "@readme/httpsnippet": "11.4.1",
+    "url": "^0.11.4"
+  },
+  "peerDependencies": {
+    "@voiden/sdk": ">=1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@voiden/sdk": "^1.1.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}

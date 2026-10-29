@@ -1,0 +1,27 @@
+{
+  "id": "code-generator",
+  "name": "Code Generator",
+  "description": "Generate code for any REST request in a .void file, in JavaScript, Python, Go, Java, PHP, Ruby, C#, Swift, Kotlin, Rust, Dart and more.",
+  "version": "1.0.0",
+  "voidenVersion": ">=2.0.0",
+  "author": "Phurpa Tsering",
+  "enabled": true,
+  "priority": 50,
+  "readme": "Open a .void file, then choose Actions (☰) → Generate code. Pick a language in the modal (JavaScript fetch by default), switch between requests in the file, choose whether to resolve {{variables}} from the active environment, and copy the result.",
+  "capabilities": {
+    "ui": {
+      "description": "Adds a Generate code entry to the .void Actions menu"
+    }
+  },
+  "dependencies": {
+    "core": "^1.0.0",
+    "sdk": "^1.0.0"
+  },
+  "features": [
+    "21 languages and 38 clients, covering every language Postman's code generator offers",
+    "JavaScript (fetch) by default; the last language you picked is remembered",
+    "Works on the request under the cursor, with a picker for multi-request files",
+    "Keeps {{variables}} as placeholders, or resolves them from the active environment",
+    "Same request as Copy as cURL: headers, query and path params, cookies, auth, and JSON/XML/YAML/form/multipart bodies"
+  ]
+}

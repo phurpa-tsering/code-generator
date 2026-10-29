@@ -1,0 +1,47 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # @readme/httpsnippet requires Node >= 22
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build renderer bundle
+        run: node build.mjs
+
+      - name: Build main-process bundle
+        run: node build-main.mjs
+
+      - name: Generate manifest
+        run: node generate-manifest.mjs
+
+      - name: Create zip release package
+        run: node zip.mjs
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/manifest.json
+            changelog.json
+            dist/code-generator.js
+            dist/code-generator.zip

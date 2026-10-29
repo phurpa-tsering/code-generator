@@ -1,0 +1,16 @@
+[
+  {
+    "version": "v1.0.0",
+    "date": "29/10/2026",
+    "title": "Initial Release",
+    "description": "Generate code for REST requests in 21 languages from the .void Actions menu.",
+    "changes": {
+      "Added": [
+        "Generate code modal with a language picker, defaulting to JavaScript (fetch)",
+        "Request picker for files with several requests, starting at the one under the cursor",
+        "Resolve variables toggle; off keeps {{variables}} as placeholders",
+        "Python http.client and Dart http clients alongside @readme/httpsnippet's targets"
+      ]
+    }
+  }
+]
